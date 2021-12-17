@@ -35,7 +35,8 @@ public class BaseClass
 	@BeforeClass(groups={"smoketesting","Regressiontesting"})
 	public void launchBrowser_URL() throws IOException
 	{
-		String browser=FileUtil.objforFileUtil().readDataFrompropfile("browser");
+		String browser=System.getProperty("BROWSER");
+		//String browser=FileUtil.objforFileUtil().readDataFrompropfile("browser");
 		if(browser.equals("chrome"))
 		{
 			driver=new ChromeDriver();
